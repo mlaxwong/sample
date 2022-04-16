@@ -18,5 +18,5 @@ RUN chown -R www-data:www-data ${APACHE_DOCUMENT_ROOT} \
 
 EXPOSE 80
 
-HEALTHCHECK --interval=5s --timeout=3s --retries=2\
+HEALTHCHECK --interval=5s --timeout=3s --start-period=3s --retries=2\
     CMD curl --fail http://localhost:80 || exit 1
